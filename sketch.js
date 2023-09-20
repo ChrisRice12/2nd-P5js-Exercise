@@ -10,20 +10,29 @@ function setup() {
 function draw() {
   background(255,125,0);
   ellipse( x, height/2, diameter);
+
+
   if (x >= width || x<=0) {
     speed = speed * -1;
   }
   x += speed;
 }
 
+
+
    function mouseReleased() {
     loop();
   }
+
   
 function mousePressed() {
     noLoop();
 
-    
+    function mouseClicked() {
+    ellipse( x, height/2, diameter);
+    //prevent default
+    return false
+  } 
 
   }
 
